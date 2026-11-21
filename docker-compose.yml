@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Base de données MySQL pour MS1 (Médicaments & Pharmacies)
+  mysql-ms1:
+    image: mysql:8.0
+    container_name: mediconnect-mysql-ms1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mediconnect_ms1
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_ms1_data:/var/lib/mysql
+    networks:
+      - mediconnect-network
+
+  # Microservice MS1 - Médicaments
+  ms1-medicaments:
+    build:
+      context: ./Backend/ms1-medicaments
+      dockerfile: Dockerfile
+    container_name: mediconnect-ms1-medicaments
+    restart: on-failure
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-ms1:3306/mediconnect_ms1?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - mysql-ms1
+    networks:
+      - mediconnect-network
+
+networks:
+  mediconnect-network:
+    driver: bridge
+
+volumes:
+  mysql_ms1_data:

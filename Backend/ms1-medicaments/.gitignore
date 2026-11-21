@@ -1,0 +1,25 @@
+# Fichiers personnels de révision / documentation locale
+*GUIDE_REVISION*
+*GUIDE_REVISION_ET_TERMES_TECHNIQUES*
+GUIDE_REVISION_ET_TERMES_TECHNIQUES.md
+
+# Maven / Build
+target/
+*.class
+*.jar
+*.war
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Logs
+*.log
+logs/
+
+# Requêtes HTTP locales
+http-requests/
