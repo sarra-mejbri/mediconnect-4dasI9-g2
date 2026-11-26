@@ -6,6 +6,6 @@ import tn.esprit.traitements.entity.Prise;
 import java.util.List;
 
 public interface PriseRepository extends JpaRepository<Prise, Long> {
-    List<Prise> findByPrescriptionId(Long prescriptionId);
-    List<Prise> findByPrescriptionTraitementId(Long traitementId);
+    List<Prise> findByPrescription_Id(Long prescriptionId);
+    List<Prise> findByPrescription_Traitement_Id(Long traitementId);
 }

@@ -25,7 +25,7 @@ public class PrescriptionService {
 
     public List<Prescription> findByTraitement(Long traitementId) {
         traitementService.findById(traitementId); // 404 si le traitement n'existe pas
-        return repository.findByTraitementId(traitementId);
+        return repository.findByTraitement_Id(traitementId) ;
     }
 
     public List<Prescription> findAll() {

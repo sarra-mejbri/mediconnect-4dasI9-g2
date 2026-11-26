@@ -28,12 +28,12 @@ public class PriseService {
 
     public List<Prise> findByPrescription(Long prescriptionId) {
         prescriptionService.findById(prescriptionId);
-        return repository.findByPrescriptionId(prescriptionId);
+        return repository.findByPrescription_Id(prescriptionId);
     }
 
     public List<Prise> findByTraitement(Long traitementId) {
         traitementService.findById(traitementId);
-        return repository.findByPrescriptionTraitementId(traitementId);
+        return repository.findByPrescription_Traitement_Id(traitementId);
     }
 
     public Prise findById(Long id) {

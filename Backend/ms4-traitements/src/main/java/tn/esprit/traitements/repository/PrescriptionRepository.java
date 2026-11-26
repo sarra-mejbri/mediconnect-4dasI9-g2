@@ -6,5 +6,5 @@ import tn.esprit.traitements.entity.Prescription;
 import java.util.List;
 
 public interface PrescriptionRepository extends JpaRepository<Prescription, Long> {
-    List<Prescription> findByTraitementId(Long traitementId);
+    List<Prescription> findByTraitement_Id(Long traitementId);
 }
