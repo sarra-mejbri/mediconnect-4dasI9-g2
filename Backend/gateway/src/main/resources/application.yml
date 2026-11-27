@@ -13,6 +13,12 @@ spring:
           predicates:
             - Path=/api/treatments/**,/api/prescriptions/**,/api/intakes/**,/api/reminders/**
 
+        # MS2 - Analyses medicales et laboratoires
+        - id: ms2-analyses
+          uri: lb://ms2-analyses
+          predicates:
+            - Path=/api/labs/**,/api/lab-requests/**,/api/analyses/**
+
         # Chaque membre ajoute sa route ici, sur le même modèle :
         # - id: ms1-medicaments
         #   uri: lb://ms1-medicaments

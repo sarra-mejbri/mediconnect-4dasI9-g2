@@ -15,7 +15,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         "spring.datasource.url=jdbc:h2:mem:testdb",
         "spring.datasource.username=sa",
         "spring.datasource.password=",
-        "spring.jpa.hibernate.ddl-auto=create-drop"
+        "spring.jpa.hibernate.ddl-auto=create-drop",
+        "spring.cloud.config.enabled=false",
+        "eureka.client.enabled=false"
 })
 @AutoConfigureMockMvc
 class LaboratoireControllerTest {
